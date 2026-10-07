@@ -92,7 +92,7 @@
       "url": "https://aureriacandy.co.za/",
       "logo": "https://raw.githubusercontent.com/aadildhorat-cloud/hive-times-assets/main/aureria-candy/images/logo-aureriacandy.jpg",
       "image": "https://raw.githubusercontent.com/aadildhorat-cloud/hive-times-assets/main/aureria-candy/images/logo-aureriacandy.jpg",
-      "telephone": "+27649220145",
+      "telephone": "+27793388849",
       "email": "orders@aureriacandy.co.za",
       "priceRange": "R$$",
       "currenciesAccepted": "ZAR",
@@ -135,7 +135,7 @@
       },
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+27649220145",
+        "telephone": "+27793388849",
         "contactType": "customer service",
         "email": "orders@aureriacandy.co.za",
         "availableLanguage": ["English"],
@@ -2210,6 +2210,446 @@ button, a, .filter-chip, .product-card, .qty-btn { -webkit-user-select: none; -m
   .progress-bar { width: 100%; }
   .preloader::before { animation: none; }
 }
+/* ===== MAGICAL HERO SLIDER ENHANCEMENTS ===== */
+.candy-hero-slider-section {
+  background: linear-gradient(135deg, #022c22 0%, #064e3b 30%, #047857 60%, #022c22 100%);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 4px solid var(--gold);
+  min-height: 750px;
+}
+
+/* Magical Background Effects */
+.magical-bg-effects {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.4;
+  animation: floatOrb 8s ease-in-out infinite;
+}
+
+.orb-1 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.4) 0%, transparent 70%);
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.orb-2 {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.3) 0%, transparent 70%);
+  top: 60%;
+  right: 10%;
+  animation-delay: -3s;
+}
+
+.orb-3 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.35) 0%, transparent 70%);
+  bottom: 10%;
+  left: 30%;
+  animation-delay: -5s;
+}
+
+@keyframes floatOrb {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -30px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+/* Sparkle Container */
+.sparkle-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.sparkle-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #fbbf24;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #fbbf24, 0 0 20px #f59e0b;
+  animation: sparkleFloat 3s ease-in-out infinite;
+}
+
+@keyframes sparkleFloat {
+  0%, 100% { 
+    opacity: 0; 
+    transform: translateY(0) scale(0) rotate(0deg); 
+  }
+  50% { 
+    opacity: 1; 
+    transform: translateY(-100px) scale(1) rotate(180deg); 
+  }
+}
+
+/* Enhanced Slide Content */
+.slide-content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 var(--container-padding);
+  position: relative;
+  z-index: 2;
+}
+
+.candy-visual-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateX(-60px) scale(0.9);
+  transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.swiper-slide-active .candy-visual-side {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  transition-delay: 0.2s;
+}
+
+.candy-svg {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  filter: drop-shadow(0 25px 50px rgba(217, 119, 6, 0.5));
+}
+
+.floating-fruit {
+  animation: magicalFloat 5s ease-in-out infinite;
+}
+
+@keyframes magicalFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-20px) rotate(2deg); }
+  50% { transform: translateY(0) rotate(0deg); }
+  75% { transform: translateY(-15px) rotate(-2deg); }
+}
+
+.sparkle {
+  animation: sparklePulse 2s ease-in-out infinite;
+}
+
+@keyframes sparklePulse {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Magical Content Side */
+.candy-content-side {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(251, 191, 36, 0.3);
+  border-radius: 32px;
+  padding: clamp(2.5rem, 5vw, 4rem);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6), 
+              inset 0 0 40px rgba(251, 191, 36, 0.1);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.candy-content-side::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.swiper-slide-active .candy-content-side {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+
+/* Magical Badge */
+.magical-badge {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.3), rgba(217, 119, 6, 0.4));
+  color: #fbbf24;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+  border: 2px solid rgba(251, 191, 36, 0.5);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3),
+              inset 0 0 20px rgba(251, 191, 36, 0.1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.magical-badge i {
+  animation: sparkleIcon 2s ease-in-out infinite;
+}
+
+@keyframes sparkleIcon {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.2) rotate(10deg); }
+}
+
+.swiper-slide-active .magical-badge {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s;
+}
+
+/* Magical Title */
+.magical-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #ffffff 0%, #fbbf24 50%, #f59e0b 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  text-shadow: 0 10px 30px rgba(251, 191, 36, 0.3);
+  animation: gradientShift 5s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.swiper-slide-active .magical-title {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
+}
+
+/* Magical Description */
+.magical-description {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(1.1rem, 2vw, 1.25rem);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  font-weight: 500;
+}
+
+.swiper-slide-active .magical-description {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.7s;
+}
+
+/* Magical CTA Button */
+.magical-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 320px;
+  padding: 1.3rem 2rem;
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+  color: #022c22;
+  font-weight: 800;
+  font-size: 1.1rem;
+  border-radius: 16px;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(251, 191, 36, 0.5),
+              0 0 60px rgba(251, 191, 36, 0.3),
+              inset 0 2px 0 rgba(255, 255, 255, 0.4);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.magical-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  transition: left 0.7s;
+}
+
+.magical-cta:hover::before {
+  left: 100%;
+}
+
+.magical-cta:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(251, 191, 36, 0.6),
+              0 0 80px rgba(251, 191, 36, 0.4);
+}
+
+.magical-cta:hover i {
+  transform: translateX(10px);
+}
+
+.magical-cta i {
+  transition: transform 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.swiper-slide-active .magical-cta {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.8s;
+}
+
+/* Enhanced Swiper Navigation */
+.candy-hero-swiper .swiper-pagination {
+  bottom: 40px !important;
+  z-index: 10;
+}
+
+.candy-hero-swiper .swiper-pagination-bullet {
+  width: 14px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+  transition: all 0.4s ease;
+  border: 2px solid rgba(251, 191, 36, 0.5);
+}
+
+.candy-hero-swiper .swiper-pagination-bullet-active {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  width: 40px;
+  border-radius: 10px;
+  border-color: #fbbf24;
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.6);
+}
+
+.candy-hero-swiper .swiper-button-next,
+.candy-hero-swiper .swiper-button-prev {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(251, 191, 36, 0.4);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+  z-index: 10;
+}
+
+.candy-hero-swiper .swiper-button-next:after,
+.candy-hero-swiper .swiper-button-prev:after {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.candy-hero-swiper .swiper-button-next:hover,
+.candy-hero-swiper .swiper-button-prev:hover {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.3), rgba(217, 119, 6, 0.4));
+  border-color: #fbbf24;
+  transform: scale(1.15);
+  box-shadow: 0 0 30px rgba(251, 191, 36, 0.6);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .slide-content-wrapper {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2.5rem;
+  }
+  
+  .candy-visual-side {
+    order: 1;
+    transform: translateY(-40px);
+  }
+  
+  .swiper-slide-active .candy-visual-side {
+    transform: translateY(0);
+  }
+  
+  .candy-content-side {
+    order: 2;
+    text-align: center;
+    transform: translateY(40px);
+  }
+  
+  .swiper-slide-active .candy-content-side {
+    transform: translateY(0);
+  }
+  
+  .candy-svg {
+    max-width: 300px;
+  }
+  
+  .magical-cta {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .candy-hero-slider-section {
+    min-height: 850px;
+  }
+  
+  .candy-hero-swiper .swiper-button-next,
+  .candy-hero-swiper .swiper-button-prev {
+    display: none;
+  }
+  
+  .candy-content-side {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .floating-orb,
+  .floating-fruit,
+  .sparkle,
+  .magical-title,
+  .magical-badge i {
+    animation: none;
+  }
+}
 </style>
 
 <!-- Professional Preloader -->
@@ -2293,56 +2733,108 @@ window.AURERIA_CANDY_PRODUCTS = (typeof __AURERIA_CANDY_PRODUCTS_PLACEHOLDER__ !
     </div>
     <div id="dynamicMenuCategories"></div>
     <div class="menu-item">
-      <a href="tel:+27649220145" class="menu-link">
+      <a href="tel:+27793388849" class="menu-link">
         <i class="fas fa-phone" aria-hidden="true"></i><span>Contact Us</span>
       </a>
     </div>
   </div>
   <div class="menu-footer">
     <div class="contact-info">
-      <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+27649220145" style="color:inherit;text-decoration:none;">+27 64 922 0145</a></p>
+      <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+27793388849" style="color:inherit;text-decoration:none;">+27 79 338 8849</a></p>
       <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:orders@aureriacandy.co.za" style="color:inherit;text-decoration:none;">orders@aureriacandy.co.za</a></p>
       <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Johannesburg, Gauteng</p>
     </div>
     <div class="social-links">
-      <a href="https://wa.me/27649220145" title="WhatsApp" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+      <a href="https://wa.me/27793388849" title="WhatsApp" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
       <a href="mailto:orders@aureriacandy.co.za" title="Email" aria-label="Email us"><i class="fas fa-envelope" aria-hidden="true"></i></a>
-      <a href="tel:+27649220145" title="Call" aria-label="Call us"><i class="fas fa-phone" aria-hidden="true"></i></a>
+      <a href="tel:+27793388849" title="Call" aria-label="Call us"><i class="fas fa-phone" aria-hidden="true"></i></a>
     </div>
   </div>
 </nav>
 
-<!-- ========== UPGRADED PREMIUM CANDY HERO SLIDER ========== -->
+<!-- ========== MAGICAL PREMIUM CANDY HERO SLIDER ========== -->
 <section class="candy-hero-slider-section" id="candy-hero">
+  <div class="magical-bg-effects">
+    <div class="floating-orb orb-1"></div>
+    <div class="floating-orb orb-2"></div>
+    <div class="floating-orb orb-3"></div>
+    <div class="sparkle-container" id="sparkleContainer"></div>
+  </div>
+  
   <div class="swiper candy-hero-swiper">
     <div class="swiper-wrapper">
-      <!-- Slide 1: Sherbet Coated -->
+      <!-- Slide 1: Sherbet Coated - Tropical Magic -->
       <div class="swiper-slide">
         <div class="slide-content-wrapper">
           <div class="candy-visual-side">
             <div class="candy-animation">
-              <svg class="candy-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+              <svg class="candy-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                  <filter id="glow1" x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="8" result="blur" />
+                  <linearGradient id="sherbetGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#f97316;stop-opacity:1" />
+                  </linearGradient>
+                  <linearGradient id="sherbetGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+                  </linearGradient>
+                  <filter id="glow1" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="10" result="blur" />
                     <feComposite in="SourceGraphic" in2="blur" operator="over" />
                   </filter>
                 </defs>
-                <g filter="url(#glow1)" class="floating-fruit">
-                  <circle cx="200" cy="200" r="100" fill="#ef4444" opacity="0.9"/>
-                  <path d="M 150 150 Q 200 100 250 150 Q 300 200 250 250 Q 200 300 150 250 Q 100 200 150 150" fill="#fbbf24" opacity="0.8"/>
-                  <circle cx="180" cy="180" r="8" fill="#ffffff" opacity="0.6"/>
-                  <circle cx="220" cy="220" r="6" fill="#ffffff" opacity="0.6"/>
-                  <circle cx="210" cy="170" r="5" fill="#ffffff" opacity="0.6"/>
+                
+                <!-- Magical background glow -->
+                <circle cx="250" cy="250" r="180" fill="url(#sherbetGrad1)" opacity="0.2" filter="url(#glow1)">
+                  <animate attributeName="opacity" values="0.2;0.4;0.2" dur="3s" repeatCount="indefinite" />
+                </circle>
+                
+                <!-- Main fruit cluster -->
+                <g class="floating-fruit" filter="url(#glow1)">
+                  <!-- Strawberry -->
+                  <path d="M 200 280 Q 180 220 220 180 Q 260 140 300 180 Q 340 220 320 280 Q 300 340 260 340 Q 220 340 200 280" 
+                        fill="url(#sherbetGrad1)" opacity="0.95">
+                    <animateTransform attributeName="transform" type="rotate" from="0 260 260" to="360 260 260" dur="20s" repeatCount="indefinite" />
+                  </path>
+                  
+                  <!-- Gold coating swirl -->
+                  <path d="M 220 200 Q 260 180 280 220 Q 300 260 270 290 Q 240 320 220 280" 
+                        fill="none" stroke="url(#sherbetGrad2)" stroke-width="4" opacity="0.8">
+                    <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="2s" repeatCount="indefinite" />
+                  </path>
+                  
+                  <!-- Sparkles -->
+                  <circle cx="240" cy="200" r="5" fill="#fbbf24" opacity="0.9">
+                    <animate attributeName="opacity" values="0.9;0.3;0.9" dur="1.5s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="290" cy="240" r="4" fill="#fbbf24" opacity="0.8">
+                    <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="270" cy="270" r="6" fill="#ffffff" opacity="0.7">
+                    <animate attributeName="opacity" values="0.7;0.3;0.7" dur="1.8s" repeatCount="indefinite" />
+                  </circle>
+                </g>
+                
+                <!-- Secondary fruits -->
+                <g class="floating-fruit" style="animation-delay: 0.5s">
+                  <circle cx="150" cy="200" r="35" fill="#ec4899" opacity="0.85">
+                    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-10; 0,0" dur="3s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="350" cy="300" r="40" fill="#3b82f6" opacity="0.8">
+                    <animateTransform attributeName="transform" type="translate" values="0,0; 0,10; 0,0" dur="3.5s" repeatCount="indefinite" />
+                  </circle>
                 </g>
               </svg>
             </div>
           </div>
           <div class="candy-content-side">
-            <div class="section-badge"><i class="fas fa-candy-cane"></i> Signature Collection</div>
-            <h3>Sherbet Coated Fruits</h3>
-            <p>Experience the perfect crackle of our signature sherbet coating over juicy, hand-picked fruits. Available in strawberry, blue raspberry, and orange.</p>
-            <a href="#products" class="cta-view-products" onclick="setFilter('sherbet-coated'); setTimeout(() => document.getElementById('products').scrollIntoView({behavior: 'smooth'}), 100); return false;">
+            <div class="section-badge magical-badge">
+              <i class="fas fa-magic"></i> Signature Collection
+            </div>
+            <h3 class="magical-title">Sherbet Coated Fruits</h3>
+            <p class="magical-description">Experience the perfect crackle of our signature sherbet coating over juicy, hand-picked fruits. Available in strawberry, blue raspberry, and orange.</p>
+            <a href="#products" class="cta-view-products magical-cta" 
+               onclick="setFilter('Candy Boxes'); setTimeout(() => document.getElementById('products').scrollIntoView({behavior: 'smooth'}), 100); return false;">
               <span>Shop Sherbet Fruits</span>
               <i class="fas fa-arrow-right"></i>
             </a>
@@ -2350,36 +2842,82 @@ window.AURERIA_CANDY_PRODUCTS = (typeof __AURERIA_CANDY_PRODUCTS_PLACEHOLDER__ !
         </div>
       </div>
 
-      <!-- Slide 2: Bubblegum Coated -->
+      <!-- Slide 2: Bubblegum Coated - Enchanted Dreams -->
       <div class="swiper-slide">
         <div class="slide-content-wrapper">
           <div class="candy-visual-side">
             <div class="candy-animation">
-              <svg class="candy-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+              <svg class="candy-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                  <filter id="glow2" x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="8" result="blur" />
+                  <linearGradient id="bubbleGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#a855f7;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+                  </linearGradient>
+                  <linearGradient id="bubbleGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+                  </linearGradient>
+                  <filter id="glow2" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="12" result="blur" />
                     <feComposite in="SourceGraphic" in2="blur" operator="over" />
                   </filter>
                 </defs>
-                <g filter="url(#glow2)" class="floating-fruit">
-                  <circle cx="200" cy="200" r="90" fill="#ec4899" opacity="0.9"/>
-                  <circle cx="200" cy="200" r="70" fill="#3b82f6" opacity="0.8"/>
-                  <circle cx="200" cy="200" r="50" fill="#ffffff" opacity="0.3"/>
+                
+                <!-- Magical aura -->
+                <circle cx="250" cy="250" r="200" fill="url(#bubbleGrad1)" opacity="0.15" filter="url(#glow2)">
+                  <animate attributeName="r" values="200;220;200" dur="4s" repeatCount="indefinite" />
+                </circle>
+                
+                <!-- Bubblegum cluster -->
+                <g class="floating-fruit" filter="url(#glow2)">
+                  <!-- Main bubble -->
+                  <circle cx="250" cy="250" r="100" fill="url(#bubbleGrad1)" opacity="0.9">
+                    <animateTransform attributeName="transform" type="scale" values="1;1.05;1" dur="3s" repeatCount="indefinite" />
+                  </circle>
+                  
+                  <!-- Inner swirl -->
+                  <circle cx="250" cy="250" r="70" fill="url(#bubbleGrad2)" opacity="0.4">
+                    <animateTransform attributeName="transform" type="rotate" from="0 250 250" to="360 250 250" dur="15s" repeatCount="indefinite" />
+                  </circle>
+                  
+                  <!-- Gold sparkles -->
                   <g class="sparkle">
-                    <circle cx="160" cy="160" r="4" fill="#fbbf24"/>
-                    <circle cx="240" cy="240" r="4" fill="#fbbf24"/>
-                    <circle cx="230" cy="170" r="3" fill="#fbbf24"/>
+                    <circle cx="200" cy="200" r="6" fill="#fbbf24" opacity="0.9">
+                      <animate attributeName="opacity" values="0.9;0.3;0.9" dur="1.2s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="300" cy="220" r="5" fill="#fbbf24" opacity="0.8">
+                      <animate attributeName="opacity" values="0.8;0.2;0.8" dur="1.5s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="230" cy="280" r="7" fill="#ffffff" opacity="0.85">
+                      <animate attributeName="opacity" values="0.85;0.4;0.85" dur="1.8s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="280" cy="300" r="4" fill="#fbbf24" opacity="0.9">
+                      <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2s" repeatCount="indefinite" />
+                    </circle>
                   </g>
+                </g>
+                
+                <!-- Floating elements -->
+                <g class="floating-fruit" style="animation-delay: 0.8s">
+                  <circle cx="120" cy="180" r="30" fill="#ec4899" opacity="0.7">
+                    <animateTransform attributeName="transform" type="translate" values="0,0; 10,-10; 0,0" dur="4s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="380" cy="320" r="35" fill="#a855f7" opacity="0.65">
+                    <animateTransform attributeName="transform" type="translate" values="0,0; -10,10; 0,0" dur="4.5s" repeatCount="indefinite" />
+                  </circle>
                 </g>
               </svg>
             </div>
           </div>
           <div class="candy-content-side">
-            <div class="section-badge"><i class="fas fa-star"></i> Fan Favourite</div>
-            <h3>Bubblegum Coated Fruits</h3>
-            <p>Double-layered sour and sweet bubblegum coating for an unforgettable flavour explosion. The ultimate treat for bubblegum lovers.</p>
-            <a href="#products" class="cta-view-products" onclick="setFilter('bubblegum-coated'); setTimeout(() => document.getElementById('products').scrollIntoView({behavior: 'smooth'}), 100); return false;">
+            <div class="section-badge magical-badge">
+              <i class="fas fa-star"></i> Fan Favourite
+            </div>
+            <h3 class="magical-title">Bubblegum Coated Fruits</h3>
+            <p class="magical-description">Double-layered sour and sweet bubblegum coating for an unforgettable flavour explosion. The ultimate treat for bubblegum lovers.</p>
+            <a href="#products" class="cta-view-products magical-cta" 
+               onclick="setFilter('Candy Boxes'); setTimeout(() => document.getElementById('products').scrollIntoView({behavior: 'smooth'}), 100); return false;">
               <span>Shop Bubblegum Fruits</span>
               <i class="fas fa-arrow-right"></i>
             </a>
@@ -2387,33 +2925,98 @@ window.AURERIA_CANDY_PRODUCTS = (typeof __AURERIA_CANDY_PRODUCTS_PLACEHOLDER__ !
         </div>
       </div>
 
-      <!-- Slide 3: Custom Bowls -->
+      <!-- Slide 3: Custom Bowls - Tropical Paradise -->
       <div class="swiper-slide">
         <div class="slide-content-wrapper">
           <div class="candy-visual-side">
             <div class="candy-animation">
-              <svg class="candy-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+              <svg class="candy-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                  <filter id="glow3" x="-20%" y="-20%" width="140%" height="140%">
+                  <linearGradient id="bowlGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+                  </linearGradient>
+                  <filter id="glow3" x="-50%" y="-50%" width="200%" height="200%">
                     <feGaussianBlur stdDeviation="8" result="blur" />
                     <feComposite in="SourceGraphic" in2="blur" operator="over" />
                   </filter>
                 </defs>
-                <g filter="url(#glow3)" class="floating-fruit">
-                  <path d="M 100 200 Q 100 300 200 300 Q 300 300 300 200 Z" fill="#d97706" opacity="0.9"/>
-                  <circle cx="160" cy="180" r="30" fill="#ef4444"/>
-                  <circle cx="200" cy="160" r="35" fill="#3b82f6"/>
-                  <circle cx="240" cy="180" r="30" fill="#10b981"/>
-                  <path d="M 150 140 L 250 140 L 230 120 L 170 120 Z" fill="#fbbf24"/>
+                
+                <!-- Golden bowl -->
+                <g class="floating-fruit" filter="url(#glow3)">
+                  <path d="M 100 300 Q 100 400 250 400 Q 400 400 400 300 L 380 300 Q 380 380 250 380 Q 120 380 120 300 Z" 
+                        fill="url(#bowlGrad1)" opacity="0.9">
+                    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="3s" repeatCount="indefinite" />
+                  </path>
+                  
+                  <!-- Bowl rim glow -->
+                  <ellipse cx="250" cy="300" rx="150" ry="20" fill="#fbbf24" opacity="0.6">
+                    <animate attributeName="opacity" values="0.6;0.9;0.6" dur="2s" repeatCount="indefinite" />
+                  </ellipse>
+                </g>
+                
+                <!-- Colorful fruits in bowl -->
+                <g class="floating-fruit" style="animation-delay: 0.3s">
+                  <!-- Cherry red -->
+                  <circle cx="180" cy="260" r="35" fill="#ef4444" opacity="0.95" filter="url(#glow3)">
+                    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-5; 0,0" dur="2.5s" repeatCount="indefinite" />
+                  </circle>
+                  
+                  <!-- Orange -->
+                  <circle cx="250" cy="240" r="40" fill="#f97316" opacity="0.9" filter="url(#glow3)">
+                    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-6; 0,0" dur="3s" repeatCount="indefinite" />
+                  </circle>
+                  
+                  <!-- Blue raspberry -->
+                  <circle cx="320" cy="260" r="35" fill="#3b82f6" opacity="0.9" filter="url(#glow3)">
+                    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-5; 0,0" dur="2.8s" repeatCount="indefinite" />
+                  </circle>
+                  
+                  <!-- Pink bubblegum -->
+                  <circle cx="210" cy="290" r="32" fill="#ec4899" opacity="0.85" filter="url(#glow3)">
+                    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-4; 0,0" dur="2.6s" repeatCount="indefinite" />
+                  </circle>
+                  
+                  <!-- Purple -->
+                  <circle cx="290" cy="290" r="30" fill="#a855f7" opacity="0.85" filter="url(#glow3)">
+                    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-4; 0,0" dur="2.7s" repeatCount="indefinite" />
+                  </circle>
+                  
+                  <!-- Green lime -->
+                  <circle cx="250" cy="310" r="28" fill="#10b981" opacity="0.8" filter="url(#glow3)">
+                    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-3; 0,0" dur="2.4s" repeatCount="indefinite" />
+                  </circle>
+                </g>
+                
+                <!-- Magical sparkles around bowl -->
+                <g class="sparkle">
+                  <circle cx="150" cy="220" r="5" fill="#fbbf24" opacity="0.9">
+                    <animate attributeName="opacity" values="0.9;0.2;0.9" dur="1.5s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="350" cy="230" r="6" fill="#fbbf24" opacity="0.85">
+                    <animate attributeName="opacity" values="0.85;0.3;0.85" dur="1.8s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="250" cy="180" r="7" fill="#ffffff" opacity="0.9">
+                    <animate attributeName="opacity" values="0.9;0.4;0.9" dur="2s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="130" cy="280" r="4" fill="#fbbf24" opacity="0.8">
+                    <animate attributeName="opacity" values="0.8;0.3;0.8" dur="1.6s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="370" cy="290" r="5" fill="#fbbf24" opacity="0.85">
+                    <animate attributeName="opacity" values="0.85;0.2;0.85" dur="1.9s" repeatCount="indefinite" />
+                  </circle>
                 </g>
               </svg>
             </div>
           </div>
           <div class="candy-content-side">
-            <div class="section-badge"><i class="fas fa-gift"></i> Custom Orders</div>
-            <h3>Custom Mixed Bowls</h3>
-            <p>Can't decide? Get a mix of all our signature flavours. Colors are customizable to your suitings for parties, events, and gifts!</p>
-            <a href="#products" class="cta-view-products" onclick="setFilter('custom-bowls'); setTimeout(() => document.getElementById('products').scrollIntoView({behavior: 'smooth'}), 100); return false;">
+            <div class="section-badge magical-badge">
+              <i class="fas fa-gift"></i> Custom Orders
+            </div>
+            <h3 class="magical-title">Custom Mixed Bowls</h3>
+            <p class="magical-description">Can't decide? Get a mix of all our signature flavours. Colors are customizable to your suitings for parties, events, and gifts!</p>
+            <a href="#products" class="cta-view-products magical-cta" 
+               onclick="setFilter('Party Packs'); setTimeout(() => document.getElementById('products').scrollIntoView({behavior: 'smooth'}), 100); return false;">
               <span>Shop Custom Bowls</span>
               <i class="fas fa-arrow-right"></i>
             </a>
@@ -2501,8 +3104,8 @@ window.AURERIA_CANDY_PRODUCTS = (typeof __AURERIA_CANDY_PRODUCTS_PLACEHOLDER__ !
         <h3>Order Your Candy Fruits Today</h3>
         <p>Collection & Delivery Available. Contact us for custom color requests and delivery options.</p>
         <div class="cta-buttons">
-          <a href="tel:+27649220145" class="cta-btn primary"><i class="fas fa-phone"></i> Call Us</a>
-          <a href="https://wa.me/27649220145" class="cta-btn secondary" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Inquiry</a>
+          <a href="tel:+27793388849" class="cta-btn primary"><i class="fas fa-phone"></i> Call Us</a>
+          <a href="https://wa.me/27793388849" class="cta-btn secondary" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Inquiry</a>
         </div>
       </div>
     </div>
@@ -2576,7 +3179,7 @@ window.AURERIA_CANDY_PRODUCTS = (typeof __AURERIA_CANDY_PRODUCTS_PLACEHOLDER__ !
 
 <!-- WhatsApp Floating Widget -->
 <div class="whatsapp-float">
-  <a href="https://wa.me/27649220145?text=Hi%20Aureria%20Candy!%20I%20have%20a%20question%20about%20your%20candy%20fruits."
+  <a href="https://wa.me/27793388849?text=Hi%20Aureria%20Candy!%20I%20have%20a%20question%20about%20your%20candy%20fruits."
      class="whatsapp-link" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp" title="Chat with us on WhatsApp">
     <i class="fab fa-whatsapp" aria-hidden="true"></i>
   </a>
@@ -2594,9 +3197,9 @@ window.AURERIA_CANDY_PRODUCTS = (typeof __AURERIA_CANDY_PRODUCTS_PLACEHOLDER__ !
       <p>Specially coated candy fruits in South Africa.</p>
       <p>Fresh ingredients, juicy fruits, and the best flavouring.</p>
       <div class="footer-social">
-        <a href="https://wa.me/27649220145" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+        <a href="https://wa.me/27793388849" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
         <a href="mailto:orders@aureriacandy.co.za" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
-        <a href="tel:+27649220145" aria-label="Phone"><i class="fas fa-phone" aria-hidden="true"></i></a>
+        <a href="tel:+27793388849" aria-label="Phone"><i class="fas fa-phone" aria-hidden="true"></i></a>
       </div>
     </div>
     <div class="footer-section">
@@ -2955,7 +3558,7 @@ const cart = {
     const total = this.items.reduce((sum, item) => sum + ((parseFloat(item.price) || 0) * (parseInt(item.quantity) || 0)), 0).toFixed(2);
     const deliveryNote = this.orderType === 'Delivery' ? 'Please confirm availability and delivery fees to my area.' : 'Please confirm availability and collection time.';
     message += `\n💰 *Total Amount: R${total}*\n${deliveryNote} Thank you!`;
-    window.open(`https://wa.me/27649220145?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/27793388849?text=${encodeURIComponent(message)}`, '_blank');
   },
   showToast(message) {
     const toast = document.getElementById('toast');
@@ -2991,7 +3594,7 @@ function openModal(productId) {
   
   const whatsappBtn = document.getElementById('modalWhatsappBtn');
   const whatsappMsg = `Hi Aureria Candy! I'm interested in: ${product.name} (R${product.price.toFixed(2)}). I'd like to order ${modalQuantity} pieces. Please confirm availability.`;
-  whatsappBtn.href = `https://wa.me/27649220145?text=${encodeURIComponent(whatsappMsg)}`;
+  whatsappBtn.href = `https://wa.me/27793388849?text=${encodeURIComponent(whatsappMsg)}`;
   
   const badge = document.getElementById('modalBadge');
   if (product.badge) { badge.textContent = product.badge; badge.style.display = 'inline-block'; }
@@ -3038,7 +3641,7 @@ function updateQty(change) {
   if (currentProduct) {
     const whatsappBtn = document.getElementById('modalWhatsappBtn');
     const whatsappMsg = `Hi Aureria Candy! I'm interested in: ${currentProduct.name} (R${currentProduct.price.toFixed(2)}). I'd like to order ${modalQuantity} pieces. Please confirm availability.`;
-    whatsappBtn.href = `https://wa.me/27649220145?text=${encodeURIComponent(whatsappMsg)}`;
+    whatsappBtn.href = `https://wa.me/27793388849?text=${encodeURIComponent(whatsappMsg)}`;
   }
 }
 
@@ -3153,6 +3756,31 @@ document.addEventListener('DOMContentLoaded', function() {
     navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
     a11y: { prevSlideMessage: 'Previous slide', nextSlideMessage: 'Next slide' }
   });
+  // Create magical sparkles
+function createSparkles() {
+  const container = document.getElementById('sparkleContainer');
+  if (!container) return;
+  
+  // Create 30 sparkle particles
+  for (let i = 0; i < 30; i++) {
+    const sparkle = document.createElement('div');
+    sparkle.className = 'sparkle-particle';
+    sparkle.style.left = Math.random() * 100 + '%';
+    sparkle.style.top = Math.random() * 100 + '%';
+    sparkle.style.animationDelay = Math.random() * 3 + 's';
+    sparkle.style.animationDuration = (Math.random() * 3 + 2) + 's';
+    
+    // Random colors from tropical palette
+    const colors = ['#fbbf24', '#f59e0b', '#ec4899', '#a855f7', '#3b82f6'];
+    sparkle.style.background = colors[Math.floor(Math.random() * colors.length)];
+    sparkle.style.boxShadow = `0 0 10px ${sparkle.style.background}`;
+    
+    container.appendChild(sparkle);
+  }
+}
+
+// Initialize sparkles on load
+document.addEventListener('DOMContentLoaded', createSparkles);
 });
 </script>
 </body>
