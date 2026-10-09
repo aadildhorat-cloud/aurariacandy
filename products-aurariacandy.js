@@ -9,7 +9,7 @@
 // ️ ADVANCED CONFIGURATION
 const CONFIG = {
   // ⚠️ IMPORTANT: Replace with your Google Apps Script deployment URL when ready
-  SHEETS_API_URL: "https://script.google.com/macros/s/AKfycbz-WDbEedZrsqGcAA4ll9M1pPtyAZkT1n9W2OFYNgxlynRqKoBzBnDx2YEcIsTE1zfw/exec",
+  SHEETS_API_URL: "https://script.google.com/macros/s/AKfycbxAunKLoBowFeuVpLqI_bnixhRk8XQ9NnHag54H4glfbJaCnj41Q-y8_2NJU1wZq2T-/exec",
   basePath: "",
   imageDir: "/images",
   fallbackImage: "/images/aureria-candy-logo.jpg",
