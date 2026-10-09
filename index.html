@@ -2712,6 +2712,25 @@ function priceOf(product) {
 }
 
 // ===== CATEGORY ICON MAPPER =====
+// ===== AURERIA PRODUCTS RESOLVER (fixes global name mismatch) =====
+function getAureriaProducts() {
+  const p = window.AURERIA_CANDY_PRODUCTS || window.AURERIA_PRODUCTS || window.AURERIA_DATA || [];
+  if (p && p.length && !window.AURERIA_CANDY_PRODUCTS) window.AURERIA_CANDY_PRODUCTS = p; // normalize
+  return p;
+}
+// Listen at parse-time so we can NEVER miss the event from the deferred script
+document.addEventListener('aureria:products:loaded', () => {
+  setTimeout(() => { if (getAureriaProducts().length) renderDynamicCategories(); }, 60);
+});
+// Polling safety net: every 500ms for 10 seconds
+(function () {
+  let tries = 0;
+  const t = setInterval(() => {
+    tries++;
+    if (getAureriaProducts().length) { clearInterval(t); renderDynamicCategories(); }
+    else if (tries > 20) { clearInterval(t); }
+  }, 500);
+})();
 function getCategoryIcon(categorySlug) {
   const iconMap = {
     'sherbet-coated': 'fa-lemon',
