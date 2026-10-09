@@ -1,5 +1,5 @@
 /**
-🔧 aureria Candy - Centralized Product Data & Utilities (ULTRA PERFORMANCE EDITION)
+🔧 Aureria Candy - Centralized Product Data & Utilities (ULTRA PERFORMANCE EDITION)
 📁 Path: /js/products-aureriacandy.js
 ✅ Specially coated candy fruits, sherbet, bubblegum flavours
 */
@@ -13,10 +13,10 @@ const CONFIG = {
   basePath: "",
   imageDir: "/images",
   fallbackImage: "/images/aureria-candy-logo.jpg",
-  businessName: "aureria Candy",
-  businessLogo: "/images/aureria-candy-logo.jpg",
-  CACHE_KEY: "aureriacandy_products_cache_v1", // Fixed: Matches HTML cache key, removed trailing space
-  CART_KEY: "aureriacandy_cart_v1",
+  businessName: "Auraria Candy",
+  businessLogo: "/images/auraria-candy-logo.jpg",
+  CACHE_KEY: "aurariacandy_products_cache_v1", // Fixed: Matches HTML cache key, removed trailing space
+  CART_KEY: "aurariacandy_cart_v1",
   CACHE_TTL: 10 * 60 * 1000, // 10 minutes
   WHATSAPP_NUMBER: "27793388849", // Fixed: Removed trailing space
   
@@ -29,11 +29,11 @@ const CONFIG = {
   }
 };
 
-// ️ STATIC FALLBACK DATA (Candy Products from aureria Candy)
+// ️ STATIC FALLBACK DATA (Candy Products from Auraria Candy)
 const FALLBACK_PRODUCTS = [
   {
     id: "aureria-box-001",
-    name: "aureria Candy Box - Strawberry Mix",
+    name: "Aureria Candy Box - Strawberry Mix",
     price: 75.00,
     category: "Candy Boxes",
     niche: "candy",
@@ -42,13 +42,13 @@ const FALLBACK_PRODUCTS = [
     badge: "🔥 Best Seller",
     image: "/images/products/aureria-strawberry-box.jpg",
     popupImages: ["/images/products/aureria-strawberry-box.jpg"],
-    businessName: "aureria Candy",
+    businessName: "Aureria Candy",
     businessLogo: "/images/aureria-candy-logo.jpg",
     active: true
   },
   {
     id: "aureria-box-002",
-    name: "aureria Candy Box - Bubblegum Mix",
+    name: "Aureria Candy Box - Bubblegum Mix",
     price: 75.00,
     category: "Candy Boxes",
     niche: "candy",
@@ -57,13 +57,13 @@ const FALLBACK_PRODUCTS = [
     badge: "✨ Popular",
     image: "/images/products/aureria-bubblegum-box.jpg",
     popupImages: ["/images/products/aureria-bubblegum-box.jpg"],
-    businessName: "aureria Candy",
+    businessName: "Aureria Candy",
     businessLogo: "/images/aureria-candy-logo.jpg",
     active: true
   },
   {
     id: "aureria-box-003",
-    name: "aureria Candy Box - Blue Raspberry",
+    name: "Aureria Candy Box - Blue Raspberry",
     price: 75.00,
     category: "Candy Boxes",
     niche: "candy",
@@ -72,13 +72,13 @@ const FALLBACK_PRODUCTS = [
     badge: "💰 Value",
     image: "/images/products/aureria-blueraspberry-box.jpg",
     popupImages: ["/images/products/aureria-blueraspberry-box.jpg"],
-    businessName: "aureria Candy",
+    businessName: "Aureria Candy",
     businessLogo: "/images/aureria-candy-logo.jpg",
     active: true
   },
   {
     id: "aureria-box-004",
-    name: "aureria Candy Box - Orange Sherbet",
+    name: "Aureria Candy Box - Orange Sherbet",
     price: 75.00,
     category: "Candy Boxes",
     niche: "candy",
@@ -87,13 +87,13 @@ const FALLBACK_PRODUCTS = [
     badge: "⭐ Premium",
     image: "/images/products/aureria-orange-box.jpg",
     popupImages: ["/images/products/aureria-orange-box.jpg"],
-    businessName: "aureria Candy",
+    businessName: "Aureria Candy",
     businessLogo: "/images/aureria-candy-logo.jpg",
     active: true
   },
   {
     id: "aureria-box-005",
-    name: "aureria Candy Box - Mixed Flavours",
+    name: "Aureria Candy Box - Mixed Flavours",
     price: 75.00,
     category: "Candy Boxes",
     niche: "candy",
@@ -102,13 +102,13 @@ const FALLBACK_PRODUCTS = [
     badge: "🎨 Customizable",
     image: "/images/products/aureria-mixed-box.jpg",
     popupImages: ["/images/products/aureria-mixed-box.jpg"],
-    businessName: "aureria Candy",
+    businessName: "Aureria Candy",
     businessLogo: "/images/aureria-candy-logo.jpg",
     active: true
   },
   {
     id: "aureria-party-pack",
-    name: "aureria Party Pack (5 Boxes)",
+    name: "Aureria Party Pack (5 Boxes)",
     price: 350.00,
     category: "Party Packs",
     niche: "candy",
@@ -117,7 +117,7 @@ const FALLBACK_PRODUCTS = [
     badge: "🎉 Party Special",
     image: "/images/products/aureria-party-pack.jpg",
     popupImages: ["/images/products/aureria-party-pack.jpg"],
-    businessName: "aureria Candy",
+    businessName: "Aureria Candy",
     businessLogo: "/images/aureria-candy-logo.jpg",
     active: true
   }
@@ -167,7 +167,7 @@ async function fetchProducts(forceRefresh = false) {
     if (!forceRefresh) {
       const cached = getCachedProducts();
       if (cached && cached.length > 0) {
-        console.log('⚡ Loaded aureria Candy products from cache (instant)');
+        console.log('⚡ Loaded Aureria Candy products from cache (instant)');
         processProducts(cached);
         isLoading = false;
         setTimeout(() => backgroundRefresh(), 100);
@@ -211,7 +211,7 @@ async function backgroundRefresh(knownHash) {
     const productsArray = Array.isArray(data) ? data : (data.products || []);
     if (!productsArray) return;
     const snapshot = JSON.stringify(productsArray);
-    if (lastRawSnapshot === null) lastRawSnapshot = JSON.stringify(window.aureria_PRODUCTS || []);
+    if (lastRawSnapshot === null) lastRawSnapshot = JSON.stringify(window.AURERIA_PRODUCTS || []);
     if (snapshot === lastRawSnapshot) {
       console.log('🔄 Background refresh: no changes since last sync');
       return;
@@ -258,15 +258,15 @@ function processProducts(rawProducts) {
   });
   
   // ✅ CRITICAL: Expose to window so index.html can render them instantly!
-  window.aureria_PRODUCTS = PRODUCTS;
-  window.aureria_DATA = PRODUCTS;
-  window.aureria_CANDY_PRODUCTS = PRODUCTS; // Added: Matches the variable name your HTML expects
+  window.AURERIA_PRODUCTS = PRODUCTS;
+  window.AURERIA_DATA = PRODUCTS;
+  window.AURERIA_CANDY_PRODUCTS = PRODUCTS; // Added: Matches the variable name your HTML expects
   
   return PRODUCTS;
 }
 
 // 🛠️ Utility API
-window.aureriaProducts = {
+window.AureriaProducts = {
   getAll: () => PRODUCTS,
   getById: (id) => PRODUCTS_MAP.get(id),
   getByCategory: (category) => PRODUCTS.filter(p => p.categorySlug === category.toLowerCase().replace(/\s+/g, '-')),
@@ -297,10 +297,10 @@ window.aureriaProducts = {
         <p class="product-description">${p.description}</p>
         <div class="product-price">${priceDisplay}</div>
         <div class="product-actions">
-          <button class="add-to-cart-btn" onclick="event.stopPropagation(); aureriaProducts.addToCart('${p.id}'); return false;">
+          <button class="add-to-cart-btn" onclick="event.stopPropagation(); AureriaProducts.addToCart('${p.id}'); return false;">
             ${btnText}
           </button>
-          <a href="${aureriaProducts.getWhatsAppLink(p)}" class="whatsapp-product-btn" target="_blank" rel="noopener" onclick="event.stopPropagation();" aria-label="WhatsApp about ${p.name}" title="Chat on WhatsApp">
+          <a href="${AureriaProducts.getWhatsAppLink(p)}" class="whatsapp-product-btn" target="_blank" rel="noopener" onclick="event.stopPropagation();" aria-label="WhatsApp about ${p.name}" title="Chat on WhatsApp">
             <i class="fab fa-whatsapp"></i>
           </a>
         </div>
@@ -330,7 +330,7 @@ window.aureriaProducts = {
 
 // 🚀 INITIALIZATION
 (async function init() {
-  const inlineData = window.aureria_PRODUCTS || window.aureria_CANDY_PRODUCTS;
+  const inlineData = window.AURERIA_PRODUCTS || window.AURERIA_CANDY_PRODUCTS;
   const hasInlineData = Array.isArray(inlineData) && inlineData.length > 0;
   
   if (hasInlineData) {
@@ -341,7 +341,7 @@ window.aureriaProducts = {
     try {
       document.dispatchEvent(new CustomEvent('aureria:products:loaded', { detail: { products: PRODUCTS } }));
     } catch (err) {}
-    setTimeout(() => backgroundRefresh(window.aureria_PRODUCTS_HASH), 1500);
+    setTimeout(() => backgroundRefresh(window.AURERIA_PRODUCTS_HASH), 1500);
   } else {
     await fetchProducts();
     try {
@@ -349,7 +349,7 @@ window.aureriaProducts = {
     } catch (err) {}
   }
   
-  console.group('aureria Candy Products Initialized');
+  console.group('Aureria Candy Products Initialized');
   console.log(`✅ ${PRODUCTS.length} products ready`);
   console.groupEnd();
 })();
@@ -360,8 +360,8 @@ function generateProductSchema() {
   const productList = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "aureria Candy Product Catalog",
-    "description": "Complete catalog of specially coated candy fruits from aureria Candy. Premium quality candy with crackly coating, fresh ingredients, and delicious flavours.",
+    "name": "Aureria Candy Product Catalog",
+    "description": "Complete catalog of specially coated candy fruits from Aureria Candy. Premium quality candy with crackly coating, fresh ingredients, and delicious flavours.",
     "numberOfItems": PRODUCTS.length,
     "itemListElement": PRODUCTS.map((product, index) => ({
       "@type": "ListItem",
@@ -372,7 +372,7 @@ function generateProductSchema() {
         "description": product.description,
         "image": product.image.startsWith('http') ? product.image : `https://aureriacandy.co.za${product.image}`,
         "sku": product.id,
-        "brand": { "@type": "Brand", "name": "aureria Candy" },
+        "brand": { "@type": "Brand", "name": "Aureria Candy" },
         "offers": {
           "@type": "Offer",
           "url": `https://aureriacandy.co.za/#product-${product.id}`,
@@ -381,7 +381,7 @@ function generateProductSchema() {
           "priceValidUntil": new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
           "availability": product.price > 0 ? "https://schema.org/InStock" : "https://schema.org/PreOrder",
           "itemCondition": "https://schema.org/NewCondition",
-          "seller": { "@type": "Organization", "name": "aureria Candy" }
+          "seller": { "@type": "Organization", "name": "Aureria Candy" }
         }
       }
     }))

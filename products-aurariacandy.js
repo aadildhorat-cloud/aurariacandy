@@ -13,12 +13,12 @@ const CONFIG = {
   basePath: "",
   imageDir: "/images",
   fallbackImage: "/images/aureria-candy-logo.jpg",
-  businessName: "Aureria Candy",
-  businessLogo: "/images/aureria-candy-logo.jpg",
-  CACHE_KEY: "aureriacandy_products_cache_v1", // Fixed: Matches HTML cache key, removed trailing space
-  CART_KEY: "aureriacandy_cart_v1",
+  businessName: "Auraria Candy",
+  businessLogo: "/images/auraria-candy-logo.jpg",
+  CACHE_KEY: "aurariacandy_products_cache_v1", // Fixed: Matches HTML cache key, removed trailing space
+  CART_KEY: "aurariacandy_cart_v1",
   CACHE_TTL: 10 * 60 * 1000, // 10 minutes
-  WHATSAPP_NUMBER: "27123456789", // Fixed: Removed trailing space
+  WHATSAPP_NUMBER: "27793388849", // Fixed: Removed trailing space
   
   resolveImage: function(src) {
     if (!src) return CONFIG.fallbackImage;
@@ -29,7 +29,7 @@ const CONFIG = {
   }
 };
 
-// ️ STATIC FALLBACK DATA (Candy Products from Aureria Candy)
+// ️ STATIC FALLBACK DATA (Candy Products from Auraria Candy)
 const FALLBACK_PRODUCTS = [
   {
     id: "aureria-box-001",
